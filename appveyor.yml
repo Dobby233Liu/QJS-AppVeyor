@@ -17,8 +17,7 @@ install:
     - cmake --build . --config Release
     - cmake --build . --config Release --target install
     - cd c:\projects\qjs
-    - powershell -Command "(gc Makefile) -replace '-rdynamic', '-export-dynamic' | Out-File -encoding UTF8 Makefile"
 build_script:
-    - set CROSS_PREFIX="i686-w64-mingw32-" && set EXE=.exe && make
+    - set CONFIG_WIN32=y && make
     - set DESTDIR=%cd% && make install
     - dir .\usr\local\bin
