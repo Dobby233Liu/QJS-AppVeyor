@@ -12,6 +12,6 @@ install:
     - cd c:\projects\qjs
     - powershell -Command "(gc Makefile) -replace 'CONFIG_LTO=y', 'COOOOO=n' | Out-File -encoding UTF8 Makefile"
 build_script:
-    - set CONFIG_WIN32=y && make
+    - set CONFIG_WIN32=y && set AR="i686-w64-mingw32-gc-ar" make
     - set DESTDIR=%cd% && make install
     - dir .\usr\local\bin
