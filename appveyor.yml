@@ -5,10 +5,14 @@ clone_folder: c:\projects\qjs-base
 
 init:
     - git clone --recursive https://github.com/horhof/quickjs c:\projects\qjs
+    - git clone --recursive https://github.com/dlfcn-win32/dlfcn-win32 c:\projects\dlfcn-w32    
 install:
     - choco install mingw --x86 # w64
     - choco install make
     - refreshenv
+    - cd c:\projects\dlfcn-w32
+    - echo BUILD_SHARED=yes > config.mak
+    - make include-install 
     - cd c:\projects\qjs
 build_script:
     - make
