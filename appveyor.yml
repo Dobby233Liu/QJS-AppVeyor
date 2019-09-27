@@ -13,7 +13,7 @@ install:
     - cd c:\projects\dlfcn-w32
     - md build
     - cd build
-    - cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install ..
+    - cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install -DCMAKE_SH="CMAKE_SH-NOTFOUND" ..
     - cmake --build . --config Release
     - cmake --build . --config Release --target install
     - cd c:\projects\qjs
