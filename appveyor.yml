@@ -20,4 +20,4 @@ after_build:
     - cd bin
     - copy ..\*.exe .
 artifacts:
-    - path: c:\projects\qjs\bin
+    - path: ..\qjs\bin
