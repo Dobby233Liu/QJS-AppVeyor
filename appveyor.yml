@@ -5,17 +5,10 @@ clone_folder: c:\projects\qjs-base
 
 init:
     - git clone --recursive https://github.com/horhof/quickjs c:\projects\qjs
-    - git clone --recursive https://github.com/dlfcn-win32/dlfcn-win32 c:\projects\dlfcn-w32    
 install:
     - choco install mingw --x86 # w64
     - choco install make
     - refreshenv
-    - cd c:\projects\dlfcn-w32
-    - md build
-    - cd build
-    - cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw32" -DCMAKE_SH="CMAKE_SH-NOTFOUND" ..
-    - cmake --build . --config Release
-    - cmake --build . --config Release --target install
     - cd c:\projects\qjs
 build_script:
     - set CONFIG_WIN32=y && make
