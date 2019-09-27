@@ -9,6 +9,6 @@ install:
     - choco install make
     - cd c:\projects\qjs
 build_script:
-    - make
+    - set CONFIG_WIN32=y && make
     - set DESTDIR=%cd% && mingw32-make install
     - dir .\usr\local\bin
