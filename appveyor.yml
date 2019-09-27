@@ -6,7 +6,7 @@ clone_folder: c:\projects\qjs-base
 init:
     - git clone --recursive https://github.com/horhof/quickjs c:\projects\qjs
 install:
-    - choco install mingw # w64
+    - choco install mingw --x86 # w64
     - choco install make
     - cd c:\projects\qjs
 build_script:
