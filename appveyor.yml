@@ -8,6 +8,6 @@ init:
 install:
     - cd c:\projects\qjs
 build_script:
-    - make
-    - set DESTDIR=%cd% && make install
+    - mingw32-make
+    - set DESTDIR=%cd% && mingw32-make install
     - dir .\usr\local\bin
