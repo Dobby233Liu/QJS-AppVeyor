@@ -8,8 +8,9 @@ init:
 install:
     - choco install mingw --x86 # w64
     - choco install make
+    - refreshenv
     - cd c:\projects\qjs
 build_script:
-    - set CONFIG_WIN32=y && make
-    - set DESTDIR=%cd% && mingw32-make install
+    - make
+    - set DESTDIR=%cd% && make install
     - dir .\usr\local\bin
