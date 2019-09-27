@@ -17,6 +17,7 @@ build_script:
     - strip qjs.exe qjsbn.exe qjsc.exe qjsbnc.exe
 after_build:
     - mkdir bin
+    - cd bin
     - copy ..\*.exe .
 artifacts:
     - path: c:\projects\qjs\bin
