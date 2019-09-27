@@ -11,8 +11,12 @@ install:
     - choco install make
     - refreshenv
     - cd c:\projects\dlfcn-w32
-    - cmake --build . --config "MinGW Makefiles"
-    - cmake --build . --config "MinGW Makefiles" --target install
+    - set "GENERATOR_ARGS=-A Win32"
+    - md build
+    - cd build
+    - cmake -G "MinGW Makefles" %GENERATOR_ARGS% -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install ..
+    - cmake --build . --config Release
+    - cmake --build . --config Release --target install
     - cd c:\projects\qjs
 build_script:
     - make
