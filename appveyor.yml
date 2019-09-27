@@ -14,7 +14,7 @@ install:
     - set "GENERATOR_ARGS=-A Win32"
     - md build
     - cd build
-    - cmake -G "MinGW Makefles" %GENERATOR_ARGS% -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install ..
+    - cmake -G "MinGW Makefiles" %GENERATOR_ARGS% -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install ..
     - cmake --build . --config Release
     - cmake --build . --config Release --target install
     - cd c:\projects\qjs
