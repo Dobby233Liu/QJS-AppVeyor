@@ -17,8 +17,8 @@ install:
     - cmake --build . --config Release
     - cmake --build . --config Release --target install
     - cd c:\projects\qjs
-    - powershell -Command "(gc Makefile) -replace '-rdynamic', '-export-dynamic' | Out-File Makefile"
+    - powershell -Command "(gc Makefile) -replace '-rdynamic', '-Wl,--export-dynamic' | Out-File -encoding UTF-8 Makefile"
 build_script:
-    - set CROSS_PREFIX="C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw32\bin\i686-w64-mingw32-" && set EXE=.exe && make
+    - set CROSS_PREFIX="i686-w64-mingw32-" && set EXE=.exe && make
     - set DESTDIR=%cd% && make install
     - dir .\usr\local\bin
