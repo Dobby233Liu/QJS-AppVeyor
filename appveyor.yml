@@ -18,6 +18,6 @@ install:
     - cmake --build . --config Release --target install
     - cd c:\projects\qjs
 build_script:
-    - make
+    - set CROSS_PREFIX=i686-w64-mingw32- && set EXE=.exe && make
     - set DESTDIR=%cd% && make install
     - dir .\usr\local\bin
