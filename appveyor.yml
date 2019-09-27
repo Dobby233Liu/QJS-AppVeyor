@@ -12,6 +12,7 @@ install:
     - cd c:\projects\qjs
     - powershell -Command "(gc Makefile) -replace 'CONFIG_LTO=y', 'COOOOO=n' | Out-File -encoding UTF8 Makefile"
     - copy C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw32\bin\i686-w64-mingw32-gcc-ar.exe C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw32\bin\i686-w64-mingw32-ar.exe
+    - copy C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw32\bin\strip.exe C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw32\bin\i686-w64-mingw32-strip.exe
 build_script:
     - set CONFIG_WIN32=y && make
     - set DESTDIR=%cd% && make install
