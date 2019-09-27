@@ -11,8 +11,8 @@ install:
     - choco install make
     - refreshenv
     - cd c:\projects\dlfcn-w32
-    - echo BUILD_SHARED=yes > config.mak
-    - make include-install 
+    - cmake --build . --config "MinGW Makefiles"
+    - cmake --build . --config "MinGW Makefiles" --target install
     - cd c:\projects\qjs
 build_script:
     - make
