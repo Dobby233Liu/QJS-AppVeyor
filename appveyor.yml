@@ -4,7 +4,7 @@ image: Visual Studio 2017
 clone_folder: c:\projects\qjs-base
 
 init:
-    - git clone --recurvise https://github.com/horhof/quickjs c:\projects\qjs
+    - git clone --recursive https://github.com/horhof/quickjs c:\projects\qjs
 install:
     - cd c:\projects\qjs
 build_script:
