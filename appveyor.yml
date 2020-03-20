@@ -14,7 +14,6 @@ install:
     - copy C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw32\bin\i686-w64-mingw32-gcc-ar.exe C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw32\bin\i686-w64-mingw32-ar.exe
 build_script:
     - set CONFIG_WIN32=y && make
-    - strip qjs.exe qjsbn.exe qjsc.exe qjsbnc.exe
 after_build:
     - mkdir C:\projects\qjs-base\bin
     - cd C:\projects\qjs-base\bin
